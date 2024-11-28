@@ -73,6 +73,22 @@ function addPlayer() {
     closeModal();
 }
 
+function deletePlayer() {
+    const playerSelect = document.getElementById('playerSelect');
+    const selectedPlayerName = playerSelect.options[playerSelect.selectedIndex].text;
+    const card = document.getElementById(currentPosition);
+
+    if (card) {
+        card.innerHTML = `
+            <div class="player-info">
+                <p>${currentPosition.toUpperCase()}</p>
+            </div>
+        `;
+    }
+
+    closeModal();
+}
+
 function addNewPlayer() {
     const newPlayer = {
         name: document.getElementById('name').value,
