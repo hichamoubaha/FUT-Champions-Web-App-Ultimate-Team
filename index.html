@@ -224,3 +224,14 @@
             </div>
         </div>
     </div>
+    <!-- The Modal for Player Selection -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Select a Player</h2>
+            <select id="playerSelect" class="w-full p-2 mt-2 border border-gray-400">
+                <option value="" disabled selected>Select a player</option>
+            </select>
+            <button class="mt-4 p-2 bg-blue-500 text-white" onclick="addPlayer()">Add Player</button>
+        </div>
+    </div>
