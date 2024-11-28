@@ -29,6 +29,7 @@
             text-align: center;
             color: #fff;
         }
+
         .player-info .name {
             font-size: 16px;
             font-weight: bold;
@@ -41,20 +42,24 @@
             align-items: center;
             color: #fff;
         }
+
         .rating {
             font-size: 20px;
             font-weight: bold;
+            color: yellow;
+            margin-top: 5px;
+            
         }
 
         .attributes {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            flex-direction: row;
         }
 
         .attributes p {
             margin: 0;
-            font-size: 14px;
+            font-size: 13px;
+            margin-top: 2px;
         }
 
         .cards-container {
@@ -83,21 +88,21 @@
 
         .club {
             top: 10px;
-            right: 10px;
+            left: 10px;
+            margin-top: 70px;
         }
 
         .nationality {
-            bottom: 10px;
+            top: 10px;
             left: 10px;
+            margin-top: 110px;
         }
 
         .player-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid #fff;
+            width: 100px;
+            height: 100px;
             margin: 0 auto;
-            margin-top: -40px;
+            margin-top: 40px;
         }
 
         .player-details {
@@ -105,6 +110,7 @@
             flex-direction: column;
             align-items: center;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -141,7 +147,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-        </style>
+    </style>
 </head>
 
 <body class="bg-gray-800 text-white">
@@ -190,8 +196,8 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Defenders -->
-                 <div class="col-span-3 flex justify-around">
+                <!-- Defenders -->
+                <div class="col-span-3 flex justify-around">
                     <div id="lb" class="card flex items-center justify-center" onclick="openModal('lb')">
                         <div class="player-info">
                             <p>LB</p>
@@ -213,8 +219,8 @@
                         </div>
                     </div>
                 </div>
-                  <!-- Goalkeeper -->
-                  <div class="col-span-3 flex justify-center mt-4">
+                <!-- Goalkeeper -->
+                <div class="col-span-3 flex justify-center mt-4">
                     <div id="gk" class="card flex items-center justify-center" onclick="openModal('gk')">
                         <div class="player-info">
                             <p>GK</p>
@@ -224,6 +230,7 @@
             </div>
         </div>
     </div>
+
     <!-- The Modal for Player Selection -->
     <div id="playerModal" class="modal">
         <div class="modal-content">
@@ -235,8 +242,9 @@
             <button class="mt-4 p-2 bg-blue-500 text-white" onclick="addPlayer()">Add Player</button>
         </div>
     </div>
-     <!-- The Modal for Adding New Player -->
-     <div id="newPlayerModal" class="modal">
+
+    <!-- The Modal for Adding New Player -->
+    <div id="newPlayerModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeNewPlayerModal()">&times;</span>
             <h2>Add New Player</h2>
@@ -262,6 +270,7 @@
                     <option value="rb">RB</option>
                     <option value="gk">GK</option>
                 </select>
+                
                 <label for="nationality">Nationality:</label>
                 <input type="text" id="nationality" class="w-full p-2 mt-2 border border-gray-400" required>
                 
@@ -293,8 +302,7 @@
             </form>
         </div>
     </div>
-
-    <!-- Substitutions Container -->
+<!-- Substitutions Container -->
 <div class="container mx-auto py-10">
     <h2 class="text-center text-2xl mb-6">Substitutions</h2>
     <div class="grid grid-cols-6 gap-4">
@@ -330,6 +338,6 @@
         </div>
     </div>
 </div>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
