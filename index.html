@@ -48,7 +48,7 @@
             font-weight: bold;
             color: yellow;
             margin-top: 5px;
-            
+
         }
 
         .attributes {
@@ -154,7 +154,7 @@
 
     <div class="container mx-auto py-10">
         <!-- New modal to add players -->
-        <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()">Add New Player</button>
+        <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()"> Add New Player</button>
         </div>
 
         <!-- Cards Container with Stadium Background -->
@@ -240,6 +240,7 @@
                 <option value="" disabled selected>Select a player</option>
             </select>
             <button class="mt-4 p-2 bg-blue-500 text-white" onclick="addPlayer()">Add Player</button>
+            <button class="mt-4 p-2 bg-red-500 text-white" onclick="deletePlayer()">Delete Player</button>
         </div>
     </div>
 
@@ -302,42 +303,42 @@
             </form>
         </div>
     </div>
-<!-- Substitutions Container -->
-<div class="container mx-auto py-10">
-    <h2 class="text-center text-2xl mb-6">Substitutions</h2>
-    <div class="grid grid-cols-6 gap-4">
-        <div id="sub1" class="card flex items-center justify-center" onclick="openModal('sub1')">
-            <div class="player-info">
-                <p>SUB 1</p>
+    <!-- Substitutions Container -->
+    <div class="container mx-auto py-10">
+        <h2 class="text-center text-2xl mb-6">Substitutions</h2>
+        <div class="grid grid-cols-6 gap-4">
+            <div id="sub1" class="card flex items-center justify-center" onclick="openModal('sub1')">
+                <div class="player-info">
+                    <p>SUB 1</p>
+                </div>
             </div>
-        </div>
-        <div id="sub2" class="card flex items-center justify-center" onclick="openModal('sub2')">
-            <div class="player-info">
-                <p>SUB 2</p>
+            <div id="sub2" class="card flex items-center justify-center" onclick="openModal('sub2')">
+                <div class="player-info">
+                    <p>SUB 2</p>
+                </div>
             </div>
-        </div>
-        <div id="sub3" class="card flex items-center justify-center" onclick="openModal('sub3')">
-            <div class="player-info">
-                <p>SUB 3</p>
+            <div id="sub3" class="card flex items-center justify-center" onclick="openModal('sub3')">
+                <div class="player-info">
+                    <p>SUB 3</p>
+                </div>
             </div>
-        </div>
-        <div id="sub4" class="card flex items-center justify-center" onclick="openModal('sub4')">
-            <div class="player-info">
-                <p>SUB 4</p>
+            <div id="sub4" class="card flex items-center justify-center" onclick="openModal('sub4')">
+                <div class="player-info">
+                    <p>SUB 4</p>
+                </div>
             </div>
-        </div>
-        <div id="sub5" class="card flex items-center justify-center" onclick="openModal('sub5')">
-            <div class="player-info">
-                <p>SUB 5</p>
+            <div id="sub5" class="card flex items-center justify-center" onclick="openModal('sub5')">
+                <div class="player-info">
+                    <p>SUB 5</p>
+                </div>
             </div>
-        </div>
-        <div id="sub6" class="card flex items-center justify-center" onclick="openModal('sub6')">
-            <div class="player-info">
-                <p>SUB 6</p>
+            <div id="sub6" class="card flex items-center justify-center" onclick="openModal('sub6')">
+                <div class="player-info">
+                    <p>SUB 6</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 <script src="script.js"></script>
 </body>
 </html>
