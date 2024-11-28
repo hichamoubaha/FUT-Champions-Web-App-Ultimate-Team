@@ -235,3 +235,30 @@
             <button class="mt-4 p-2 bg-blue-500 text-white" onclick="addPlayer()">Add Player</button>
         </div>
     </div>
+     <!-- The Modal for Adding New Player -->
+     <div id="newPlayerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeNewPlayerModal()">&times;</span>
+            <h2>Add New Player</h2>
+            <form id="newPlayerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="w-full p-2 mt-2 border border-gray-400" required>
+                
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" class="w-full p-2 mt-2 border border-gray-400" required>
+                
+                <label for=" position">Position:</label>
+                <select id="position" class="w-full p-2 mt-2 border border-gray-400" required>
+                    <option value="" disabled selected>Select a position</option>
+                    <option value="lw">LW</option>
+                    <option value="st">ST</option>
+                    <option value="rw">RW</option>
+                    <option value="cm1">CM</option>
+                    <option value="cam">CAM</option>
+                    <option value="cm2">CM</option>
+                    <option value="lb">LB</option>
+                    <option value="cb1">CB</option>
+                    <option value="cb2">CB</option>
+                    <option value="rb">RB</option>
+                    <option value="gk">GK</option>
+                </select>
