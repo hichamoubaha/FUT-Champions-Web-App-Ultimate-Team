@@ -141,4 +141,34 @@
             text-decoration: none;
             cursor: pointer;
         }
+        </style>
 </head>
+
+<body class="bg-gray-800 text-white">
+
+    <div class="container mx-auto py-10">
+        <!-- New modal to add players -->
+        <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()">Add New Player</button>
+        </div>
+
+        <!-- Cards Container with Stadium Background -->
+        <div class="cards-container">
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Forwards -->
+                <div class="col-span-3 flex justify-around">
+                    <div id="lw" class="card flex items-center justify-center" onclick="openModal('lw')">
+                        <div class="player-info">
+                            <p>LW</p>
+                        </div>
+                    </div>
+                    <div id="st" class="card flex items-center justify-center" onclick="openModal('st')">
+                        <div class="player-info">
+                            <p>ST</p>
+                        </div>
+                    </div>
+                    <div id="rw" class="card flex items-center justify-center" onclick="openModal('rw')">
+                        <div class="player-info">
+                            <p>RW</p>
+                        </div>
+                    </div>
+                </div>
