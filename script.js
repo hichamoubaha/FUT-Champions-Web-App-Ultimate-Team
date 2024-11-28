@@ -70,3 +70,50 @@ let players = [];
 
             closeModal();
         }
+        function addNewPlayer() {
+            const newPlayer = {
+                name: document.getElementById('name').value,
+                image: document.getElementById('image').value,
+                position: document.getElementById('position').value,
+                nationality: document.getElementById('nationality').value,
+                club: document.getElementById('club').value,
+                rating: document.getElementById('rating').value,
+                pace: document.getElementById('pace').value,
+                shooting: document.getElementById('shooting').value,
+                passing: document.getElementById('passing').value,
+                dribbling: document.getElementById('dribbling').value,
+                defending: document.getElementById('defending').value,
+                physical: document.getElementById('physical').value,
+            };
+
+            // Add the new player to the players array
+            players.push(newPlayer);
+
+            // Update the UI to reflect the new player in the correct position
+            const card = document.getElementById(newPlayer.position);
+            if (card) {
+                card.innerHTML = `
+                    <div class="player-info">
+                        <img src="${newPlayer.image}" alt="${newPlayer.name}" class="player-image">
+                        <p class="name">${newPlayer.name}</p>
+                        <div class="stats">
+                            <p class="rating">${newPlayer.rating}</p>
+                            <div class="attributes">
+                                <p>PAC: ${newPlayer.pace}</p>
+                                <p>SHO: ${newPlayer.shooting}</p>
+                                <p>PAS: ${newPlayer.passing}</p>
+                                <p>DRI: ${newPlayer.dribbling}</p>
+                                <p>DEF: ${newPlayer.defending}</p>
+                                <p>PHY: ${newPlayer.physical}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="${newPlayer.club}" alt="${newPlayer.club}" class="club">
+                    <img src="${newPlayer.nationality}" alt="${newPlayer.nationality}" class="nationality">
+                `;
+            }
+
+            closeNewPlayerModal();
+        }
+
+        fetchPlayerData();
