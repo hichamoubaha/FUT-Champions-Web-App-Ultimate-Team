@@ -7,6 +7,50 @@
     <title>FUT Team Builder</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar li {
+            display: inline;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #444;
+        }
+
+        .navbar .active {
+            background-color: #007BFF;
+        }
         .card {
             width: 180px;
             height: 300px;
@@ -48,7 +92,6 @@
             font-weight: bold;
             color: yellow;
             margin-top: 5px;
-
         }
 
         .attributes {
@@ -151,10 +194,22 @@
 </head>
 
 <body class="bg-gray-800 text-white">
-
+     <!-- Header Section -->
+     <header class="header">
+        <h1 class="font-bold text-xl"> FUT TEAM BUILDER</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" class="active">Team</a></li>
+                <li><a href="#sub">Substitutions</a></li>
+                <li><a href="#footer">Footer</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
     <div class="container mx-auto py-10">
         <!-- New modal to add players -->
-        <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()"> Add New Player</button>
+        <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()"> Add New Player</div>
         </div>
 
         <!-- Cards Container with Stadium Background -->
@@ -256,7 +311,7 @@
                 <label for="image">Image URL:</label>
                 <input type="text" id="image" class="w-full p-2 mt-2 border border-gray-400" required>
                 
-                <label for=" position">Position:</label>
+                <label for="position">Position:</label>
                 <select id="position" class="w-full p-2 mt-2 border border-gray-400" required>
                     <option value="" disabled selected>Select a position</option>
                     <option value="lw">LW</option>
@@ -303,8 +358,9 @@
             </form>
         </div>
     </div>
+    
     <!-- Substitutions Container -->
-    <div class="container mx-auto py-10">
+    <div class="container mx-auto py-10"id="sub">
         <h2 class="text-center text-2xl mb-6">Substitutions</h2>
         <div class="grid grid-cols-6 gap-4">
             <div id="sub1" class="card flex items-center justify-center" onclick="openModal('sub1')">
@@ -339,6 +395,23 @@
             </div>
         </div>
     </div>
+    <footer class="bg-gray-900 text-center py-6"id="footer">
+        <div class="flex  flex-row justify-center space-x-6 items-center space-y-4 space-y-0 mb-4">
+            <a href="#" class="text-orange-500 text-2xl">
+                <img src="twitter (1).png" alt="icon1" class="w-6 h-6 mt-4">
+            </a>
+            <a href="#" class="text-orange-500 text-2xl">
+                <img src="facebook (1).png" alt="icon2" class="w-6 h-6">
+            </a>
+            <a href="#" class="text-orange-500 text-2xl">
+                <img src="instagram.png" alt="icon3" class="w-6 h-6">
+            </a>
+            <a href="#" class="text-orange-500 text-2xl">
+                <img src="mail.png" alt="icon4" class="w-6 h-6">
+            </a>
+        </div>
+        <p class="text-gray-500">Copyright ©2024 All rights reserved</p>
+    </footer>
 <script src="script.js"></script>
 </body>
 </html>
