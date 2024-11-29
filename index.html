@@ -51,6 +51,7 @@
         .navbar .active {
             background-color: #007BFF;
         }
+
         .card {
             width: 180px;
             height: 300px;
@@ -190,96 +191,159 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 640px) {
+            .card {
+                width: 120px; /* Smaller width for small screens */
+                height: 200px; /* Adjust height accordingly */
+            }
+
+            .player-info .name {
+                font-size: 10px; /* Smaller font size */
+            }
+
+            .stats {
+                font-size: 9px; /* Smaller stats font size */
+            }
+
+            .rating {
+                font-size: 10px; /* Smaller rating font size */
+            }
+
+            .attributes p {
+                font-size: 10px; /* Smaller attribute font size */
+            }
+            .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .club,
+        .nationality {
+            position: absolute;
+            width: 20px;
+        }
+
+        .club {
+            top: 2px;
+            left: 10px;
+            margin-top: 70px;
+        }
+
+        .nationality {
+            top: 2px;
+            left: 10px;
+            margin-top: 50px;
+        }
+
+        .player-image {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        }
+
+        @media (min-width: 640px) and (max-width: 768px) {
+            .card {
+                width: 150px; /* Medium width for medium screens */
+                height: 250px; /* Adjust height accordingly */
+            }
+        }
     </style>
 </head>
 
 <body class="bg-gray-800 text-white">
-     <!-- Header Section -->
-     <header class="header">
+    <!-- Header Section -->
+    <header class="header">
         <h1 class="font-bold text-xl"> FUT TEAM BUILDER</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="#" class="active">Team</a></li>
                 <li><a href="#sub">Substitutions</a></li>
                 <li><a href="#footer">Footer</a></li>
-                
             </ul>
         </nav>
     </header>
-    
+
     <div class="container mx-auto py-10">
         <!-- New modal to add players -->
         <div class="flex justify-center mb-4 cursor-pointer p-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="openNewPlayerModal()"> Add New Player</div>
-        </div>
+    </div>
 
-        <!-- Cards Container with Stadium Background -->
-        <div class="cards-container">
-            <div class="grid grid-cols-3 gap-4">
-                <!-- Forwards -->
-                <div class="col-span-3 flex justify-around">
-                    <div id="lw" class="card flex items-center justify-center" onclick="openModal('lw')">
-                        <div class="player-info">
-                            <p>LW</p>
-                        </div>
-                    </div>
-                    <div id="st" class="card flex items-center justify-center" onclick="openModal('st')">
-                        <div class="player-info">
-                            <p>ST</p>
-                        </div>
-                    </div>
-                    <div id="rw" class="card flex items-center justify-center" onclick="openModal('rw')">
-                        <div class="player-info">
-                            <p>RW</p>
-                        </div>
+    <!-- Cards Container with Stadium Background -->
+    <div class="cards-container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Forwards -->
+            <div class="col-span-3 flex justify-around">
+                <div id="lw" class="card flex items-center justify-center" onclick="openModal('lw')">
+                    <div class="player-info">
+                        <p>LW</p>
                     </div>
                 </div>
-                <!-- Midfielders -->
-                <div class="col-span-3 flex justify-around">
-                    <div id="cm1" class="card flex items-center justify-center" onclick="openModal('cm1')">
-                        <div class="player-info">
-                            <p>CM</p>
-                        </div>
-                    </div>
-                    <div id="cam" class="card flex items-center justify-center" onclick="openModal('cam')">
-                        <div class="player-info">
-                            <p>CAM</p>
-                        </div>
-                    </div>
-                    <div id="cm2" class="card flex items-center justify-center" onclick="openModal('cm2')">
-                        <div class="player-info">
-                            <p>CM</p>
-                        </div>
+                <div id="st" class="card flex items-center justify-center" onclick="openModal('st')">
+                    <div class="player-info">
+                        <p>ST</p>
                     </div>
                 </div>
-                <!-- Defenders -->
-                <div class="col-span-3 flex justify-around">
-                    <div id="lb" class="card flex items-center justify-center" onclick="openModal('lb')">
-                        <div class="player-info">
-                            <p>LB</p>
-                        </div>
-                    </div>
-                    <div id="cb1" class="card flex items-center justify-center" onclick="openModal('cb1')">
-                        <div class="player-info">
-                            <p>CB</p>
-                        </div>
-                    </div>
-                    <div id="cb2" class="card flex items-center justify-center" onclick="openModal('cb2')">
-                        <div class="player-info">
-                            <p>CB</p>
-                        </div>
-                    </div>
-                    <div id="rb" class="card flex items-center justify-center" onclick="openModal('rb')">
-                        <div class="player-info">
-                            <p>RB</p>
-                        </div>
+                <div id="rw" class="card flex items-center justify-center" onclick="openModal('rw')">
+                    <div class="player-info">
+                        <p>RW</p>
                     </div>
                 </div>
-                <!-- Goalkeeper -->
-                <div class="col-span-3 flex justify-center mt-4">
-                    <div id="gk" class="card flex items-center justify-center" onclick="openModal('gk')">
-                        <div class="player-info">
-                            <p>GK</p>
-                        </div>
+            </div>
+            <!-- Midfielders -->
+            <div class="col-span-3 flex justify-around">
+                <div id="cm1" class="card flex items-center justify-center" onclick="openModal('cm1')">
+                    <div class="player-info">
+                        <p>CM</p>
+                    </div>
+                </div>
+                <div id="cam" class="card flex items-center justify-center" onclick="openModal('cam')">
+                    <div class="player-info">
+                        <p>CAM</p>
+                    </div>
+                </div>
+                <div id="cm2" class="card flex items-center justify-center" onclick="openModal('cm2')">
+                    <div class="player-info">
+                        <p>CM</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Defenders -->
+            <div class="col-span-3 flex justify-around">
+                <div id="lb" class="card flex items-center justify-center" onclick="openModal('lb')">
+                    <div class="player-info">
+                        <p>LB</p>
+                    </div>
+                </div>
+                <div id="cb1" class="card flex items-center justify-center" onclick="openModal('cb1')">
+                    <div class="player-info">
+                        <p>CB</p>
+                    </div>
+                </div>
+                <div id="cb2" class="card flex items-center justify-center" onclick="openModal('cb2')">
+                    <div class="player-info">
+                        <p>CB</p>
+                    </div>
+                </div>
+                <div id="rb" class="card flex items-center justify-center" onclick="openModal('rb')">
+                    <div class="player-info">
+                        <p>RB</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Goalkeeper -->
+            <div class="col-span-3 flex justify-center mt-4">
+                <div id="gk" class="card flex items-center justify-center" onclick="openModal('gk')">
+                    <div class="player-info">
+                        <p>GK</p>
                     </div>
                 </div>
             </div>
@@ -343,8 +407,7 @@
                 <input type="number" id="shooting" class="w-full p-2 mt-2 border border-gray-400" required>
                 
                 <label for="passing">Passing:</label>
-                <input type="number" id="passing" class="w-full p-2 mt-2 border border-gray-400" required>
-                
+                <input type="number" id="passing" class="w-full p-2 mt-2 border border>
                 <label for="dribbling">Dribbling:</label>
                 <input type="number" id="dribbling" class="w-full p-2 mt-2 border border-gray-400" required>
                 
@@ -360,9 +423,9 @@
     </div>
     
     <!-- Substitutions Container -->
-    <div class="container mx-auto py-10"id="sub">
+    <div class="container mx-auto py-10" id="sub">
         <h2 class="text-center text-2xl mb-6">Substitutions</h2>
-        <div class="grid grid-cols-6 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             <div id="sub1" class="card flex items-center justify-center" onclick="openModal('sub1')">
                 <div class="player-info">
                     <p>SUB 1</p>
@@ -395,10 +458,10 @@
             </div>
         </div>
     </div>
-    <footer class="bg-gray-900 text-center py-6"id="footer">
-        <div class="flex  flex-row justify-center space-x-6 items-center space-y-4 space-y-0 mb-4">
+    <footer class="bg-gray-900 text-center py-6" id="footer">
+        <div class="flex flex-row justify-center space-x-6 items-center space-y-4 space-y-0 mb-4">
             <a href="#" class="text-orange-500 text-2xl">
-                <img src="src/images/instagram.png" alt="icon1" class="w-6 h-6 mt-4">
+                <img src="src/images/twitter (1).png" alt="icon1" class="w-6 h-6 mt-4">
             </a>
             <a href="#" class="text-orange-500 text-2xl">
                 <img src="src/images/facebook (1).png" alt="icon2" class="w-6 h-6">
@@ -412,6 +475,6 @@
         </div>
         <p class="text-gray-500">Copyright ©2024 All rights reserved</p>
     </footer>
-<script src="src/script.js"></script>
+    <script src="src/script.js"></script>
 </body>
 </html>

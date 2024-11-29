@@ -59,8 +59,8 @@ function addNewPlayer() {
 
     const nameRegex = /^[a-zA-Z\s]+$/;
     const urlRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/;
-    const nationalityRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/
-    const clubRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/
+    const nationalityRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/;
+    const clubRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/;
     const ratingRegex = /^(1[0-0]|[1-9]?[0-9])$/; // 0-100
     const attributeRegex = /^(0|[1-9][0-9]?|100)$/; // 0-100
 
@@ -73,7 +73,7 @@ function addNewPlayer() {
         return;
     }
     if (!validateInput(nationality, nationalityRegex)) {
-        alert('Invalid nationality. Please Provide a valid URL.');
+        alert('Invalid nationality. Please provide a valid URL.');
         return;
     }
     if (!validateInput(club, clubRegex)) {
@@ -154,7 +154,7 @@ function addPlayer() {
                             <p>SHO ${player.shooting}</p>
                             <p>PAS ${player.passing}</p>
                             <p>DRI ${player.dribbling}</p>
-                            <p>DEF ${player.defending}</p>
+                            <p>DEF ${player.defending }</p>
                             <p>PHY ${player.physical}</p>
                         </div>
                     </div>
