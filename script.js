@@ -39,6 +39,101 @@ function closeNewPlayerModal() {
     modal.style.display = 'none';
 }
 
+function validateInput(input, regex) {
+    return regex.test(input);
+}
+
+function addNewPlayer() {
+    const name = document.getElementById('name').value;
+    const image = document.getElementById('image').value;
+    const position = document.getElementById('position').value;
+    const nationality = document.getElementById('nationality').value;
+    const club = document.getElementById('club').value;
+    const rating = document.getElementById('rating').value;
+    const pace = document.getElementById('pace').value;
+    const shooting = document.getElementById('shooting').value;
+    const passing = document.getElementById('passing').value;
+    const dribbling = document.getElementById('dribbling').value;
+    const defending = document.getElementById('defending').value;
+    const physical = document.getElementById('physical').value;
+
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    const urlRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/;
+    const nationalityRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/
+    const clubRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))$/
+    const ratingRegex = /^(1[0-0]|[1-9]?[0-9])$/; // 0-100
+    const attributeRegex = /^(0|[1-9][0-9]?|100)$/; // 0-100
+
+    if (!validateInput(name, nameRegex)) {
+        alert('Invalid name. Please use only letters and spaces.');
+        return;
+    }
+    if (!validateInput(image, urlRegex)) {
+        alert('Invalid image URL. Please provide a valid URL.');
+        return;
+    }
+    if (!validateInput(nationality, nationalityRegex)) {
+        alert('Invalid nationality. Please Provide a valid URL.');
+        return;
+    }
+    if (!validateInput(club, clubRegex)) {
+        alert('Invalid club logo. Please provide a valid URL.');
+        return;
+    }
+    if (!validateInput(rating, ratingRegex)) {
+        alert('Invalid rating. Please enter a number between 0 and 100.');
+        return;
+    }
+    if (!validateInput(pace, attributeRegex) || !validateInput(shooting, attributeRegex) || 
+        !validateInput(passing, attributeRegex) || !validateInput(dribbling, attributeRegex) || 
+        !validateInput(defending, attributeRegex) || !validateInput(physical, attributeRegex)) {
+        alert('Invalid attributes. Please enter numbers between 0 and 100.');
+        return;
+    }
+
+    const newPlayer = {
+        name,
+        image,
+        position,
+        nationality,
+        club,
+        rating,
+        pace,
+        shooting,
+        passing,
+        dribbling,
+        defending,
+        physical,
+    };
+
+    players.push(newPlayer);
+
+    const card = document.getElementById(newPlayer.position);
+    if (card) {
+        card.innerHTML = `
+            <div class="player-info">
+                <img src="${newPlayer.image}" alt="${newPlayer.name}" class="player-image">
+                <p class="name">${newPlayer.name}</p>
+                <div class="stats">
+                    <p class="rating">${newPlayer.rating}</p>
+                    <div class="attributes">
+                        <p>PAC ${newPlayer.pace}</p>
+                        <p>SHO ${newPlayer.shooting}</p>
+                        <p>PAS ${newPlayer.passing}</p>
+                        <p>DRI ${newPlayer.dribbling}</p>
+                        <p>DEF ${newPlayer.defending}</p>
+                        <p>PHY ${newPlayer.physical}</p>
+                    </div>
+                </div>
+            </div>
+            <img src="${newPlayer.club}" alt="${newPlayer.club}" class="club">
+            <img src="${newPlayer.nationality}" alt="${newPlayer.nationality}" class="nationality">
+        `;
+    }
+
+    closeNewPlayerModal();
+}
+
 function addPlayer() {
     const playerSelect = document.getElementById('playerSelect');
     const selectedPlayerName = playerSelect.options[playerSelect.selectedIndex].text;
@@ -87,52 +182,6 @@ function deletePlayer() {
     }
 
     closeModal();
-}
-
-function addNewPlayer() {
-    const newPlayer = {
-        name: document.getElementById('name').value,
-        image: document.getElementById('image').value,
-        position: document.getElementById('position').value,
-        nationality: document.getElementById('nationality').value,
-        club: document.getElementById('club').value,
-        rating: document.getElementById('rating').value,
-        pace: document.getElementById('pace').value,
-        shooting: document.getElementById('shooting').value,
-        passing: document.getElementById('passing').value,
-        dribbling: document.getElementById('dribbling').value,
-        defending: document.getElementById('defending').value,
-        physical: document.getElementById('physical').value,
-    };
-
-    // Add the new player to the players array
-    players.push(newPlayer);
-
-    // Update the UI to reflect the new player in the correct position
-    const card = document.getElementById(newPlayer.position);
-    if (card) {
-        card.innerHTML = `
-            <div class="player-info">
-                <img src="${newPlayer.image}" alt="${newPlayer.name}" class="player-image">
-                <p class="name">${newPlayer.name}</p>
-                <div class="stats">
-                    <p class="rating">${newPlayer.rating}</p>
-                    <div class="attributes">
-                        <p>PAC ${newPlayer.pace}</p>
-                        <p>SHO ${newPlayer.shooting}</p>
-                        <p>PAS ${newPlayer.passing}</p>
-                        <p>DRI ${newPlayer.dribbling}</p>
-                        <p>DEF ${newPlayer.defending}</p>
-                        <p>PHY ${newPlayer.physical}</p>
-                    </div>
-                </div>
-            </div>
-            <img src="${newPlayer.club}" alt="${newPlayer.club}" class="club">
-            <img src="${newPlayer.nationality}" alt="${newPlayer.nationality}" class="nationality">
-        `;
-    }
-
-    closeNewPlayerModal();
 }
 
 fetchPlayerData();
