@@ -206,3 +206,187 @@ let players = [];
     }
 
     fetchPlayerData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function editPlayer() {
+    //     const playerSelect = document.getElementById('playerSelect');
+    //     const selectedPlayerName = playerSelect.options[playerSelect.selectedIndex].text;
+    //     const player = players.find(p => p.name === selectedPlayerName);
+    
+    //     if (player) {
+
+    //         document.getElementById('name').value = player.name;
+    //         document.getElementById('image').value = player.image;
+    //         document.getElementById('position').value = player.position;
+    //         document.getElementById('nationality').value = player.nationality;
+    //         document.getElementById('club').value = player.club;
+    //         document.getElementById('rating').value = player.rating;
+    //         document.getElementById('pace').value = player.pace;
+    //         document.getElementById('shooting').value = player.shooting;
+    //         document.getElementById('passing').value = player.passing;
+    //         document.getElementById('dribbling').value = player.dribbling;
+    //         document.getElementById('defending').value = player.defending;
+    //         document.getElementById('physical').value = player.physical;
+    
+            
+    //         openNewPlayerModal();
+    //     }
+    // }
+    
+    // function addNewPlayer() {
+        
+    //     const name = document.getElementById('name').value;
+    //     const image = document.getElementById('image').value;
+    //     const position = document.getElementById('position').value;
+    //     const nationality = document.getElementById('nationality').value;
+    //     const club = document.getElementById('club').value;
+    //     const rating = document.getElementById('rating').value;
+    //     const pace = document.getElementById('pace').value;
+    //     const shooting = document.getElementById('shooting').value;
+    //     const passing = document.getElementById('passing').value;
+    //     const dribbling = document.getElementById('dribbling').value;
+    //     const defending = document.getElementById('defending').value;
+    //     const physical = document.getElementById('physical').value;
+    
+    
+    //     const playerIndex = players.findIndex(player => player.name === document.getElementById('playerSelect').value);
+        
+    //     if (playerIndex !== -1) {
+            
+    //         players[playerIndex] = {
+    //             name,
+    //             image,
+    //             position,
+    //             nationality,
+    //             club,
+    //             rating,
+    //             pace,
+    //             shooting,
+    //             passing,
+    //             dribbling,
+    //             defending,
+    //             physical,
+    //         };
+    
+        
+    //         const card = document.getElementById(position);
+    //         if (card) {
+    //             card.innerHTML = `
+    //                 <div class="player-info">
+    //                     <img src="${image}" alt="${name}" class="player-image">
+    //                     <p class="name">${name}</p>
+    //                     <div class="stats">
+    //                         <p class="rating">${rating}</p>
+    //                         <div class="attributes">
+    //                             <p>PAC ${pace}</p>
+    //                             <p>SHO ${shooting}</p>
+    //                             <p>PAS ${passing}</p>
+    //                             <p>DRI ${dribbling}</p>
+    //                             <p>DEF ${defending}</p>
+    //                             <p>PHY ${physical}</p>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //                 <img src="${club}" alt="${club}" class="club">
+    //                 <img src="${nationality}" alt="${nationality}" class="nationality">
+    //             `;
+    //         }
+    //     }
+    
+    //     closeNewPlayerModal();
+    // }

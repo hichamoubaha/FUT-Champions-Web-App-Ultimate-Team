@@ -183,27 +183,27 @@
     cursor: pointer;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 640px) {
     .card {
-        width: 120px; /* Smaller width for small screens */
-        height: 200px; /* Adjust height accordingly */
+        width: 120px;
+        height: 200px;
     }
 
     .player-info .name {
-        font-size: 10px; /* Smaller font size */
+        font-size: 10px; 
     }
 
     .stats {
-        font-size: 9px; /* Smaller stats font size */
+        font-size: 9px; 
     }
 
     .rating {
-        font-size: 10px; /* Smaller rating font size */
+        font-size: 10px;
     }
 
     .attributes p {
-        font-size: 10px; /* Smaller attribute font size */
+        font-size: 10px;
     }
     .badge {
     position: absolute;
@@ -243,7 +243,7 @@
 
 @media (min-width: 640px) and (max-width: 768px) {
     .card {
-        width: 150px; /* Medium width for medium screens */
-        height: 250px; /* Adjust height accordingly */
+        width: 150px;
+        height: 250px; 
     }
 }
