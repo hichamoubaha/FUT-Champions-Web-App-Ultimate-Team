@@ -5,10 +5,10 @@ let players = [];
         const response = await fetch('https://younessboumeshouli.github.io/FUT_CHAMPIONS_API/player2.json');
         const data = await response.json();
         players = data.players;
-        populatePlayerSelect();
+        popPlayerSelect();
     }
 
-    function populatePlayerSelect() {
+    function popPlayerSelect() {
         const playerSelect = document.getElementById('playerSelect');
         players.forEach(player => {
             const option = document.createElement('option');
